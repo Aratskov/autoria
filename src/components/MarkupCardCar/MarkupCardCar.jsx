@@ -4,7 +4,7 @@ import { addLike, removeLike } from 'redux/operation';
 import { MarkupButton } from 'components/MarkupButton/MarkupButton';
 import { selectLikedCars } from 'redux/select';
 
-import { Image, SecondText, Title, ToggleLike } from './MarkupCardCar.styled';
+import { Image, SecondText, Title, ToggleLike,Text } from './MarkupCardCar.styled';
 
 export const MarkupCardCar = ({ car }) => {
   const dispatch = useDispatch();
@@ -53,8 +53,8 @@ export const MarkupCardCar = ({ car }) => {
       <Image src={img} alt={model} />
       <div>
         <Title>
-          {make} <span style={{ color: '#3470FF' }}>{model}</span>,{year}{' '}
-          <span style={{ marginLeft: 'auto' }}>{rentalPrice}</span>
+          <Text>{make} <span style={{ color: '#3470FF' }}>{model}</span>,{year}</Text>
+          <span>{rentalPrice}</span>
         </Title>
 
         <div style={{ marginBottom: 28 }}>
@@ -62,7 +62,7 @@ export const MarkupCardCar = ({ car }) => {
             {addressFull[0]} | {addressFull[1]} | {rentalCompany}
           </SecondText>
           <SecondText>
-            {type} | {model} | {id} |
+            {type} | {model} | {id} 
           </SecondText>
         </div>
         <MarkupButton title="Learn more" dataCar={car} />

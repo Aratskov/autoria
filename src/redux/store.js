@@ -1,5 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import catalogReducer from './slice';
+import loaderReducer from './Loader/loaderSlice'
 
 import {
   persistStore,
@@ -27,6 +28,7 @@ const persistedCatalogReducer = persistReducer(
 export const store = configureStore({
   reducer: {
     catalog: persistedCatalogReducer,
+    isLoading: loaderReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

@@ -9,9 +9,17 @@ export const Image = styled.img`
   object-fit:cover;
 `;
 
-export const Title = styled.p`
+export const Title = styled.div`
+display: flex;
+justify-content: space-between;
 margin: 14px 0 8px;
 
+color: #121417;
+font-size: 16px;
+line-height: 1.5;
+`
+export const Text = styled.p`
+margin: 0;
 color: #121417;
 font-size: 16px;
 line-height: 1.5;

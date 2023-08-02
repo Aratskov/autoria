@@ -6,8 +6,10 @@ import {
   Description,
   List,
   ListItem,
+  CloseButton,
 } from './ModalWindow.styled';
 import { SecondMarkupButton } from 'components/SecondMarkupButton/SecondMarkupButton';
+import { nanoid } from 'nanoid';
 
 export const ModalWindow = ({ closeModal, dataCar }) => {
   const {
@@ -22,9 +24,13 @@ export const ModalWindow = ({ closeModal, dataCar }) => {
     mileage,
     rentalPrice,
   } = dataCar;
+
+  const infoDriver=rentalConditions.split('\n').concat(`Mileage:${mileage}`).concat(`Price: ${rentalPrice}`)
+
   return (
     <BackdropModal closeModal={closeModal}>
       <Form>
+        <CloseButton onClick={closeModal}>&#10005;</CloseButton>
         <Image src={img} alt={model} />
         <Title>
           {make} <span style={{ color: '#3470FF' }}>{model}</span>,{year}
@@ -51,16 +57,18 @@ export const ModalWindow = ({ closeModal, dataCar }) => {
             ))}
           </List>
         </div>
-              <div style={{maxWidth:"460px",marginBottom:"30px"}}>
-                  <Description style={{ fontWeight: 500, marginBottom: '15px' }}>
+        <div style={{ maxWidth: '460px', marginBottom: '30px' }}>
+          <Description style={{ fontWeight: 500, marginBottom: '15px' }}>
             Rental Conditions:
           </Description>
-          
-          <span>{rentalConditions}</span>
-          <span>Mileage:{mileage}</span>
-          <span>Price: {rentalPrice}</span>
-              </div>
-              <SecondMarkupButton title="Rental car"/>
+
+          <p style={{ display: 'flex', gap: "36px", flexWrap: "wrap", margin:0}}>
+  {infoDriver?.map((info) => (
+    <span key={nanoid()}>{info}</span>
+  ))}
+</p>
+        </div>
+        <SecondMarkupButton title="Rental car" />
       </Form>
     </BackdropModal>
   );

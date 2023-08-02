@@ -1,9 +1,31 @@
 import styled from 'styled-components';
 
 export const Form = styled.form`
+position: relative;
   padding: 40px;
   background-color: #fff;
+  border-radius: 24px;
 `;
+
+export const CloseButton = styled.button`
+position: absolute;
+top:16px;
+right: 16px;
+font-size: 22px;
+font-weight: 900;
+
+background-color: transparent;
+border: none;
+outline: transparent;
+
+cursor: pointer;
+
+&:hover{
+transform: scale(1.2);
+transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+color: #0B44CD;
+}
+`
 
 export const Image = styled.img`
   height: 260px;

@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/autoria/static/css/main.b5320759.css",
-    "main.js": "/autoria/static/js/main.bd8ef292.js",
+    "main.js": "/autoria/static/js/main.1188b128.js",
     "index.html": "/autoria/index.html",
     "main.b5320759.css.map": "/autoria/static/css/main.b5320759.css.map",
-    "main.bd8ef292.js.map": "/autoria/static/js/main.bd8ef292.js.map"
+    "main.1188b128.js.map": "/autoria/static/js/main.1188b128.js.map"
   },
   "entrypoints": [
     "static/css/main.b5320759.css",
-    "static/js/main.bd8ef292.js"
+    "static/js/main.1188b128.js"
   ]
 }

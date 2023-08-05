@@ -1,24 +1,25 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  display: flex;
-  justify-content: center;
-`;
-
 export const List = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, 272px); */
+  /* grid-template-columns: repeat(auto-fit,minmax(272px,1fr)); */
+  max-width: 1178px;
   column-gap: 30px;
   row-gap: 50px;
-  width: calc((272px * 4) + 90px);
 
   list-style: none;
   padding: 30px 0;
-  margin: 0;
+  margin: 0 auto;
+  
+/* ${({ variant }) => { return `justify-content: ${!variant ? "start" : "center"}` }} */
+
+${({ variant }) => { return `grid-template-columns: ${variant ? "repeat(auto-fit,minmax(272px,1fr))" : "repeat(auto-fit, 272px)"}` }}
+
 `;
 
 export const Item = styled.li`
-  width: 272px;
+  /* width: 272px; */
   height: 426px;
 `;
 

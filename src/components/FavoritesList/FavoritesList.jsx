@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { selectLikedCars } from 'redux/select';
 import { MarkupCardCar } from 'components/MarkupCardCar/MarkupCardCar';
-import { Item, List,Container} from '../CatalogList/CatalogList.styled';
+import { Item, List } from '../CatalogList/CatalogList.styled';
 import { SecondTitle } from './FavoritesList.styled';
 
 export const FavoritesList = () => {
@@ -9,7 +9,7 @@ export const FavoritesList = () => {
   const lengthArr = likedCars.length;
 
   return (
-    <Container>
+    <section>
       {lengthArr === 0 ? (
         <SecondTitle>You have not added any favorite cars yet</SecondTitle>
       ) : (
@@ -21,6 +21,6 @@ export const FavoritesList = () => {
           ))}
         </List>
       )}
-    </Container>
+    </section>
   );
 };

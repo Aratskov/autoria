@@ -24,6 +24,5 @@ export const removeLike = createAction('catalog/removeLike', carId => {
 });
 
 export const changeFilter = createAction('catalog/changeFilter', filter => {
-  console.log(filter)
   return { payload: filter };
 });

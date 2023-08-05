@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Image = styled.img`
   display: block;
   width: 100%;
-  max-width: 274px;
+  /* max-width: 274px; */
   height: 268px;
   border-radius: 14px;
   object-fit:cover;

@@ -3,30 +3,30 @@ import { selectFilterCar } from 'redux/select';
 import { nanoid } from 'nanoid';
 
 import { MarkupCardCar } from 'components/MarkupCardCar/MarkupCardCar';
-import { Item, List,Container,ButtonLoad} from './CatalogList.styled';
+import { Item, List, ButtonLoad } from './CatalogList.styled';
 import { useState } from 'react';
 
-export const CatalogList = () => {
+export const CatalogList = ({variant}) => {
   const catalogCar = useSelector(selectFilterCar);
 
   const [itemsToShow, setItemsToShow] = useState(8);
 
-const handleLoadMore = () => {
+  const handleLoadMore = () => {
     setItemsToShow(prevItemsToShow => prevItemsToShow + 8);
   };
 
   return (
-    <Container>
-      <List>
-      {catalogCar?.slice(0, itemsToShow).map(car => (
-        <Item key={nanoid()}>
-          <MarkupCardCar car={car} />
-        </Item>
-      ))}
-      {itemsToShow <= catalogCar?.length && ( 
+    <section>
+      <List variant="true">
+        {catalogCar?.slice(0, itemsToShow).map(car => (
+          <Item key={nanoid()}>
+            <MarkupCardCar car={car} />
+          </Item>
+        ))}
+      </List>
+      {itemsToShow <= catalogCar?.length && (
         <ButtonLoad onClick={handleLoadMore}>Load more</ButtonLoad>
       )}
-      </List>
-    </Container>
+    </section>
   );
 };

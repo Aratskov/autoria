@@ -25,7 +25,7 @@ export const ModalWindow = ({ closeModal, dataCar }) => {
     rentalPrice,
   } = dataCar;
 
-  const infoDriver=rentalConditions.split('\n').concat(`Mileage:${mileage}`).concat(`Price: ${rentalPrice}`)
+  const infoDriver=rentalConditions.split('\n').concat(`Mileage:${mileage.toLocaleString('en-US')}`).concat(`Price: ${rentalPrice}`)
 
   return (
     <BackdropModal closeModal={closeModal}>

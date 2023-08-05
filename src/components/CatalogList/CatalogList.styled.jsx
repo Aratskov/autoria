@@ -11,10 +11,20 @@ export const List = styled.ul`
   list-style: none;
   padding: 30px 0;
   margin: 0 auto;
-  
-/* ${({ variant }) => { return `justify-content: ${!variant ? "start" : "center"}` }} */
 
-${({ variant }) => { return `grid-template-columns: ${variant ? "repeat(auto-fit,minmax(272px,1fr))" : "repeat(auto-fit, 272px)"}` }}
+/* ${({ variant }) => { return `grid-template-columns: ${variant ? "repeat(auto-fit,minmax(272px,1fr))" : "repeat(auto-fit, 272px)"}` }} */
+ ${({ variant }) => {
+    return variant
+      ? `
+        grid-template-columns: repeat(auto-fit, minmax(272px, 1fr));
+      `
+      : `
+        grid-template-columns: repeat(auto-fit, 272px);
+        @media (max-width: 606px) {
+          grid-template-columns: 100%;
+        }
+      `;
+  }}
 
 `;
 
